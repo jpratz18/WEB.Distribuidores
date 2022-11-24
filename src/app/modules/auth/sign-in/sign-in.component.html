@@ -1,0 +1,56 @@
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-dark text-white bg-opacity-75" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+                        <form [formGroup]="signInForm" #signInNgForm="ngForm" class="needs-validation">
+                            <div class="mb-md-5 mt-md-4 pb-5">
+                                <img src="../../../../assets/logo.svg" class="mb-4">
+                                <hr class="my-2 border border-light border-1 opacity-75">
+                                <h2 class="mb-3">POC - QACG</h2>
+                                <hr class="mt-2 mb-5 border border-light border-1 opacity-75">
+                                <p class="text-white-50 my-4">¡Introduce tu correo electrónico y contraseña!</p>
+
+                                <div class="input-group mt-3 mb-4">
+                                    <span class="input-group-text">
+                                        <svg width="35" height="35" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M31.3333 17.625C31.3333 21.9512 27.8262 25.4583 23.5 25.4583C19.1737 25.4583 15.6666 21.9512 15.6666 17.625C15.6666 13.2988 19.1737 9.79167 23.5 9.79167C25.5775 9.79167 27.5699 10.617 29.039 12.086C30.508 13.555 31.3333 15.5475 31.3333 17.625Z" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M9.79163 37.2083C18.1887 32.0009 28.8112 32.0009 37.2083 37.2083" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+                                            </svg>                                            
+                                    </span>
+                                    <div class="form-floating text-start text-muted">
+                                        <input type="email" [formControlName]="'email'" class="form-control" id="email" [ngClass]="displayFieldCss('email')"
+                                            placeholder="Correo electrónico" required>
+                                        <label for="email">Correo electrónico</label>
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="input-group mb-4">
+                                    <span class="input-group-text">
+                                        <svg width="35" height="35" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path clip-rule="evenodd" d="M28.366 39.583h-8.813a7.175 7.175 0 0 1-7.052-7.291V25a7.254 7.254 0 0 1 5.287-7.063v-.958a6.375 6.375 0 0 1 6.171-6.562 6.375 6.375 0 0 1 6.171 6.562v.959A7.254 7.254 0 0 1 35.418 25v7.292a7.175 7.175 0 0 1-7.052 7.291z" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M23.21 32.292a.75.75 0 0 0 1.5 0h-1.5zm1.5-3.646a.75.75 0 0 0-1.5 0h1.5zm5.228-9.984a.75.75 0 0 0 .385-1.45l-.385 1.45zm-1.57-.954v.75-.75zm-8.815 0v.75-.75zm-1.955-.495a.75.75 0 1 0 .385 1.45l-.385-1.45zm7.111 15.079v-3.646h-1.5v3.646h1.5zm5.614-15.08a7.595 7.595 0 0 0-1.956-.254l.001 1.5c.53 0 1.058.068 1.57.204l.385-1.45zm-1.955-.254h-8.815v1.5h8.815v-1.5zm-8.814 0c-.66 0-1.318.085-1.956.255l.385 1.45a6.09 6.09 0 0 1 1.57-.205v-1.5z" fill="#fff"/>
+                                        </svg>                                        
+                                    </span>
+                                    <div class="form-floating text-start text-muted">
+                                        <input type="password" [formControlName]="'password'" class="form-control" id="password" [ngClass]="displayFieldCss('password')"
+                                            placeholder="Contraseña">
+                                        <label for="password">Contraseña</label>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-primary btn-outline-light btn-lg px-5"  (click)="signIn()" [disabled]="signInForm.disabled">
+                                    <span class="spinner-border spinner-border-sm" role="status" *ngIf="loading"
+                                        aria-hidden="true"></span>
+                                        {{!loading ? 'Iniciar Sesión' : 'Loading...'}}
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

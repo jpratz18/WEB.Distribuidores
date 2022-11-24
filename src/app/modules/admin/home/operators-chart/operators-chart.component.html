@@ -1,0 +1,40 @@
+<div class="card shadow-lg mb-3">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-9">
+                <h4 class="card-title">OPERADORES</h4>
+            </div>
+            <div class="col-3 d-flex justify-content-end">
+                <select (change)="onChangeZone($event)" class="form-select form-select-md me-2" aria-label=".form-select-lg example">
+                <option *ngFor="let i of zones" [value]="i" [selected]="i == 'Zona 1'">{{i}}</option>
+            </select>
+          </div>
+        </div>
+        
+        <hr class="my-2">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">OPERADOR</th>
+                    <th scope="col">ZONA</th>
+                    <th scope="col">TIPO</th>
+                    <th scope="col">UNIDAD</th>
+                    <th scope="col">ESTATUS</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let i of dataFiltered">
+                    <td><img src="{{i.avatar}}" class="rounded-circle me-3" style="width: 35px;"
+                        alt="Avatar" />{{i.name}}</td>
+                    <td>{{i.zone}}</td>
+                    <td>{{i.type}}</td>
+                    <td>{{i.unit}}</td>
+                    <td><span class="badge rounded-pill" [ngClass]="{'bg-warning' :  i.status == 'ABIERTO', 'bg-secondary' :  i.status == 'CERRADO', 'bg-primary' :  i.status == 'EN PROCESO'}">{{i.status}}</span></td>  
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
