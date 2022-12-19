@@ -50,12 +50,20 @@ export class OperatorsChartComponent implements OnInit {
       type: "EN SITIO",
       unit: "2356-R345",
       status: "CERRADO"
+    },
+    {
+      name: "JUAN SALVADOR PRATZ MORENO",
+      avatar: "../../../../../assets/avatars/male-12.jpg",
+      zone: "ZONA 3",
+      type: "EN SITIO",
+      unit: "2356-R345",
+      status: "ABIERTO"
     }
   ]
 
   dataFiltered: Operator[] = [];
 
-  zones = ['Zona 1','Zona 2'];
+  zones = ['Zona 1','Zona 2','Zona 3'];
   zoneSelected = 'Zona 1';
 
   ngOnInit(): void {
